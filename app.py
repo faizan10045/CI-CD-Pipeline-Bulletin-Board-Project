@@ -3,7 +3,7 @@ from flask import Flask, request, render_template, redirect
 
 DATABASE = 'emp_db.db'
 app = Flask(__name__)
-#SQLALCHEMY_TRACK_MODIFICATIONS = False
+SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_DATABASE_URI = 'sqlite:///'+DATABASE
 app.config.from_object(__name__)
 db = models.db
