@@ -42,7 +42,7 @@ def test_add(client):
                  'salary': '2000',
                  'department': 'Sales'}
     client.post('/add', data=test_data)
-    assert models.Employee.query.count() == 2
+    assert models.Employee.query.count() == 1
 
 
 def test_edit():
