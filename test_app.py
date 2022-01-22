@@ -6,7 +6,7 @@ from app import app, db
 @pytest.fixture
 def client():
     initDB()
-    yield app.test_client()
+    yield app.test_client() 
     truncateDB()
 
 
@@ -42,7 +42,7 @@ def test_add(client):
                  'salary': '2000',
                  'department': 'Sales'}
     client.post('/add', data=test_data)
-    assert models.Employee.query.count() == 1
+    assert models.Employee.query.count() == 2
 
 
 def test_edit():
