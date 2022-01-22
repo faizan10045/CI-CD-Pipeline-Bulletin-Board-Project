@@ -6,7 +6,7 @@ from app import app, db
 @pytest.fixture
 def client():
     initDB()
-    yield app.test_client() 
+    yield app.test_client()
     truncateDB()
 
 
