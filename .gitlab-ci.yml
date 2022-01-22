@@ -1,0 +1,14 @@
+stages:
+  - test
+
+lint_test:
+  image: python:3.8.0-slim
+  stage: test
+  before_script:
+    - pip install flake8-html
+  script:
+    - flake8 --format=html --htmldir=flake_reports/
+  artifacts:
+    when: always
+    paths:
+      - flake_reports/
