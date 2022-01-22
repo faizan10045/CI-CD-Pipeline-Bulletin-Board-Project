@@ -2,6 +2,7 @@ stages:
   - test
   - build
   - deploy staging
+  - automated testing
 
 variables:
   IMAGE_TAG: $CI_REGISTRY_IMAGE/employee-image:$CI_COMMIT_REF_SLUG
@@ -58,5 +59,14 @@ deploy_stage:
     - docker login -u _ -p $HEROKU_STAGING_API_KEY registry.heroku.com
     - docker push $HEROKU_STAGING 
     - docker run --rm -e HEROKU_API_KEY=$HEROKU_STAGING_API_KEY wingrunr21/alpine-heroku-cli container:release web --app $STAGING_APP
-    - echo "App deployed to staging server at https://$STAGING_URL.herokuapp.com/"
+    - echo "App deployed to staging server at https://$STAGING_APP.herokuapp.com/"
     
+test_stage:
+  image: alpine
+  services:
+    - docker:dind
+  stage: automated testing
+  before_script:
+    - apk --no-cache add curl
+  script:
+    - curl https://$STAGING_APP.herokuapp.com/ | grep "Employee Data"
