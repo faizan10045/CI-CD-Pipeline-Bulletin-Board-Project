@@ -89,7 +89,7 @@
     </div>
     <div class="form-holder">
         <h2 style="color: #cc0000;">{{ error }}</h2>
-        <a href="/add" class="add-new-btn">Add new employee</a>
+        <a href="/add" class="add-new-btn">Add new bulletin</a>
         {% for emp in employees %}
         <div class="card">
             <div>
@@ -106,7 +106,7 @@
                 <form action="/delete" method="POST" class="delete-form">
                     <input type="hidden" name="emp_id" value='{{ emp.id }}'>
                     <input type="submit" name="submit" class="action"
-                        onclick="return confirm('Are you sure to remove this employee?')" value="Delete">
+                        onclick="return confirm('Are you sure to remove this bulletin?')" value="Delete">
                 </form>
             </div>
         </div>
