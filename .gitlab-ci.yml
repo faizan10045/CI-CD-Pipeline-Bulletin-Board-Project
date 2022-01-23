@@ -75,7 +75,7 @@ test_stage:
   before_script:
     - apk --no-cache add curl
   script:
-    - curl https://$STAGING_APP.herokuapp.com/ | grep "Bulletin Data"
+    - curl https://$STAGING_APP.herokuapp.com/ | grep "Employee Data"
 
 #deploy_production:
 #  image: docker:latest
