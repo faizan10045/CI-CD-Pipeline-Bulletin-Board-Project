@@ -1,7 +1,7 @@
 {% extends 'template.html' %}
 
 {% block head %}
-<title>Bulletin Board</title>
+<title>Employee Data</title>
 <style>
     .form-holder {
         width: 60%;
@@ -84,19 +84,19 @@
 <div class="container">
  
     <div class="banner">
-        <h1>Bulletin Board</h1>
+        <h1>Employee Data</h1>
         <!-- <h2>Weclome to Employee Portal </h2> -->
     </div>
     <div class="form-holder">
         <h2 style="color: #cc0000;">{{ error }}</h2>
-        <a href="/add" class="add-new-btn">Add new bulletin</a>
+        <a href="/add" class="add-new-btn">Add new employee</a>
         {% for emp in employees %}
         <div class="card">
             <div>
                 <h4>{{ emp.name }}</h4>
                 <p><span>Department:</span> {{ emp.department }}</p>
-                <p><span>Donation: </span>${{ emp.salary }}</p>
-                <p><span>Description: </span>{{ emp.address }}</p>
+                <p><span>Salary: </span>${{ emp.salary }}</p>
+                <p><span>Address: </span>{{ emp.address }}</p>
                 <p><span>Gender: </span>{{ emp.gender }}</p>
                 <p><span>Phone: </span>{{ emp.phone }}</p>
             </div>
