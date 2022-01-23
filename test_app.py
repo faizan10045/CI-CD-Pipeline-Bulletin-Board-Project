@@ -49,11 +49,11 @@ def test_edit():
     client = app.test_client()
     response = client.post('/edit/0')
     assert response.status_code == 200
-    assert b"Sorry, the bulletin does not exist." in response.data
+    assert b"Sorry, the employee does not exist." in response.data
 
 
 def test_delete(client):
     test_data = {'emp_id': 0}
     response = client.post('/delete', data=test_data)
     assert response.status_code == 200
-    assert b"Sorry, the bulletin does not exist." in response.data
+    assert b"Sorry, the employee does not exist." in response.data
