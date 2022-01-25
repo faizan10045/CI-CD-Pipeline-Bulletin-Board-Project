@@ -13,4 +13,19 @@ Pipeline Workflow
 Demo:-
 ![CICD-project-recording](https://user-images.githubusercontent.com/64662114/150960128-fa31809c-f078-478b-b580-2bd8c2921272.gif)
 
+STEPS:-
+  1. Create empty project in GitLab then clone locally
+    git clone https://gitlab.com/<repo-name>/<prj-name>.git
+  2. check ssh version using-   ssh -V
+  in Finder- press Cmd+Shift+G. (Mac)	then serach “~.ssh/’	- to find ssh folder for already existing keys
+  3. add the key in GitLab ssh section.
+      ssh -T git@gitlab.com		- to verify if working properly
+
+
+
+
+  
+
+
+
 
